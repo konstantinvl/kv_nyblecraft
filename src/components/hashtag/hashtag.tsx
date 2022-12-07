@@ -1,10 +1,15 @@
 import React from 'react';
 import './style.scss';
 
-function Hashtag(props: { hashtag: string; onClick: () => void; onDelete: () => void }) {
-  const { hashtag, onClick, onDelete } = props;
+function Hashtag(props: {
+  hashtag: string;
+  active: boolean;
+  onClick: () => void;
+  onDelete: () => void;
+}) {
+  const { hashtag, onClick, onDelete, active } = props;
   return (
-    <div className='hashtag-component' onClick={() => onClick()}>
+    <div className={'hashtag-component' + (active ? ' active' : '')} onClick={() => onClick()}>
       {hashtag}
       {hashtag !== 'All' && (
         <div

@@ -8,8 +8,11 @@ import Hashtag from '../../components/hashtag/hashtag';
 import HashtagCreator from '../../components/hashtagCreator/hashtagCreator';
 import './style.scss';
 
-function HashtagContainer(props: { setSortingHashtag: (hashtag: string) => void }) {
-  const { setSortingHashtag } = props;
+function HashtagContainer(props: {
+  sortingHashtag: string;
+  setSortingHashtag: (hashtag: string) => void;
+}) {
+  const { sortingHashtag, setSortingHashtag } = props;
   const dispatch = useAppDispatch();
   const { hashtags } = useAppSelector((state) => state.hashtags);
 
@@ -31,7 +34,12 @@ function HashtagContainer(props: { setSortingHashtag: (hashtag: string) => void 
   return (
     <div className='hashtag-container'>
       <div className='hashtag-container_tagfield'>
-        <Hashtag hashtag='All' onClick={() => setSortingHashtag('')} onDelete={() => {}} />
+        <Hashtag
+          hashtag='All'
+          onClick={() => setSortingHashtag('')}
+          onDelete={() => {}}
+          active={sortingHashtag === ''}
+        />
         {hashtags.map((tag) => {
           return (
             <Hashtag
@@ -39,6 +47,7 @@ function HashtagContainer(props: { setSortingHashtag: (hashtag: string) => void 
               onClick={() => setSortingHashtag(tag)}
               onDelete={() => callbacks.deleteHashtag(tag)}
               key={tag}
+              active={sortingHashtag === tag}
             />
           );
         })}

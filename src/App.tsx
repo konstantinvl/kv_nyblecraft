@@ -16,7 +16,10 @@ function App() {
 
   return (
     <div className='App'>
-      <HashtagContainer setSortingHashtag={(hashtag: string) => setSortingHashtag(hashtag)} />
+      <HashtagContainer
+        setSortingHashtag={(hashtag: string) => setSortingHashtag(hashtag)}
+        sortingHashtag={sortingHashtag}
+      />
       <NotesContainer sortingHashtag={sortingHashtag} />
     </div>
   );
