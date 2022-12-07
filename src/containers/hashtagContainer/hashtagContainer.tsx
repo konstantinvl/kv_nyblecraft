@@ -38,6 +38,7 @@ function HashtagContainer(props: { setSortingHashtag: (hashtag: string) => void 
               hashtag={tag}
               onClick={() => setSortingHashtag(tag)}
               onDelete={() => callbacks.deleteHashtag(tag)}
+              key={tag}
             />
           );
         })}
