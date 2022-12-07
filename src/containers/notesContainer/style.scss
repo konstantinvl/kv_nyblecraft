@@ -1,0 +1,21 @@
+.notes-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: scroll;
+  height: calc(100vh - 100px);
+  max-height: calc(100vh - 100px);
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: none;
+    width: 0px;
+    visibility: hidden;
+  }
+}

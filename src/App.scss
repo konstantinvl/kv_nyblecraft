@@ -1,0 +1,19 @@
+.App {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  max-height: 100vh;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: none;
+    width: 0px;
+    visibility: hidden;
+  }
+}
